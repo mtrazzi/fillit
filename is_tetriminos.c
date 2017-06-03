@@ -1,48 +1,67 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_tretriminos.c                                   :+:      :+:    :+:   */
+/*   is_tetriminos.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mtrazzi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/03 15:31:01 by pringsta          #+#    #+#             */
-/*   Updated: 2017/06/03 15:45:13 by pringsta         ###   ########.fr       */
+/*   Created: 2017/06/03 18:25:36 by mtrazzi           #+#    #+#             */
+/*   Updated: 2017/06/03 19:05:19 by mtrazzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	is_tretriminos(char *tretri)
+#include "fillit.h"
+
+#include "stdio.h"
+
+int		is_str_square(char *str) //test si la string est de la forme *****\n*****\n*****\n*****\n*****\n
 {
-	if (!(tretri))
-		return (0);
-	else
-		return (1);
+	int i;
+	int j;
+
+	i = 0;
+	while (i < 4)
+	{
+		j = 0;
+		while (j < 4)
+		{
+			if (str[5 * i + j] != '.' && str[5 * i + j] != '#')
+				return (0);
+			j++;
+		}
+		if (str[5 * i + j] != '\n')
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
+int		good_neighbors(char *str, int position)
+{
+	return (0);
+}
 
-count total characters (max 26 *21)
-								
-static int count_char
-static int count_hash
-static int count_point
+int		is_tetriminos(char *grid) //suppose que la string est de la forme
+								  // *****\n*****\n*****\n*****\n*****\n
+{
+	if (!is_str_square(grid))
+		return (0);
+	int count;
+	int i;
+
+	count = 0;
+	i = 0;
+	while (i < 24)
+	{
+		if (grid[i] =
+	}
+}*/
 
 
-
-line 
-// 5 characters
-// last is '/n'
-// 4 characters (max 4 '.', max 
-
-
-// of contains 4 * '#'
-// if contains 12 * '.'
-// if additon system.. 
-//
-// counter of #
-// counter of .
-// total character counter
-// total char counter of . and # = 16 , then OK
-// while (counter of # != 4 &&, . != 12 and total char counter total counter != 16
-// positon next # (must be + 1 or + 4)
-//
-//
-// line 
+int main(int ac, char **av)
+{
+	if (ac != 2)
+		return (0);
+	printf("%d", is_str_square(av[1]));
+	return (0);
+}
