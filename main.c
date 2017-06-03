@@ -1,10 +1,23 @@
-int	main(int ac, char **av)
-{	
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mtrazzi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/06/03 17:28:40 by mtrazzi           #+#    #+#             */
+/*   Updated: 2017/06/03 17:32:33 by mtrazzi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "fillit.h"
+
+int		main(int ac, char **av)
+{
 	int fd;
-	
-	(void)ac;
+
 	fd = open(av[1], O_RDONLY);
-	if (ac != 2) // !(valid file)
-		write(2, "error\n", 6);
+	if (ac != 2)
+		ft_putendl_fd("error", 2);
 	return (0);
 }
