@@ -6,16 +6,16 @@
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/03 15:28:20 by pringsta          #+#    #+#             */
-/*   Updated: 2017/06/03 15:44:43 by pringsta         ###   ########.fr       */
+/*   Updated: 2017/06/03 15:55:49 by mtrazzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FILLIT_H
+
 #include <unistd.h>
 #include <fcntl.h>
+#include "libft/libft.h"
 
-# ifndef FILLIT_H
 #define FILLIT_H
-
-
 
 #endif
