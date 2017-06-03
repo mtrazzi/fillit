@@ -35,33 +35,3 @@ int		is_str_square(char *str) //test si la string est de la forme *****\n*****\n
 	}
 	return (1);
 }
-
-int		good_neighbors(char *str, int position)
-{
-	return (0);
-}
-
-int		is_tetriminos(char *grid) //suppose que la string est de la forme
-								  // *****\n*****\n*****\n*****\n*****\n
-{
-	if (!is_str_square(grid))
-		return (0);
-	int count;
-	int i;
-
-	count = 0;
-	i = 0;
-	while (i < 24)
-	{
-		if (grid[i] =
-	}
-}*/
-
-
-int main(int ac, char **av)
-{
-	if (ac != 2)
-		return (0);
-	printf("%d", is_str_square(av[1]));
-	return (0);
-}
