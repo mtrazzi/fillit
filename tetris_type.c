@@ -17,7 +17,6 @@ char	*tetris_type(char *pointer, char c)
 	{
 		if (c == pointer[i])
 		{
-			printf("in code : i = %d and p = %d\n", i, p);
 			str[j] = '0' + i - p;
 			p = i;
 			j++;

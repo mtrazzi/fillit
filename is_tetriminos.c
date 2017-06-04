@@ -48,20 +48,22 @@ int		is_intput_well_formated(char *str)
 
 int		is_tetri(char *str)
 {
-	int		i;
+	size_t	i;
 	char	*tet_lst;
 	char	*code;
+	char	*test;
 
 	i = 0;
-	tet_lst = ft_read("all_tetriminos");
+	tet_lst = ft_read("all_tet");
 	code = tetris_type(str, '#');
-	code[0] = '0';
 	printf("code : %s\n", code);
-	while (i < 15)
+	while (i < (ft_strlen(tet_lst) + 1) / 21)
 	{
-		write(1, tet_lst + 5 * i + 1, 3);
-		printf("\n");
-		if (!ft_strncmp(tet_lst + 5 * i, code, 4))
+		test = tetris_type(tet_lst + 21 * i, '#');
+		write(1, "test is : ", 10);
+		write(1, test + 1, 3);
+		write(1, "\n", 1);
+		if (!ft_strncmp(test + 1, code + 1, 3))
 			return (1);
 		i++;
 	}
