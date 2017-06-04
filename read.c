@@ -6,7 +6,7 @@
 /*   By: mtrazzi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/04 14:30:21 by mtrazzi           #+#    #+#             */
-/*   Updated: 2017/06/04 14:35:19 by mtrazzi          ###   ########.fr       */
+/*   Updated: 2017/06/04 15:56:46 by mtrazzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ char    *ft_ret_tetris_fr_file(char *av1)
 	buff = ft_strnew(len);
 	fd = open(av1, O_RDONLY);
 	ret = read(fd, buff, len);
+	close(fd);
 	return (buff);
 }

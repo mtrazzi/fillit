@@ -17,6 +17,7 @@ clean_lib:
 	
 clean:
 	/bin/rm -f $(OBJ_NAME)
+	/bin/rm -f ./a.out
 
 fclean: clean
 	/bin/rm -f $(NAME)

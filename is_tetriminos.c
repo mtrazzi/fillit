@@ -6,7 +6,7 @@
 /*   By: mtrazzi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/03 18:25:36 by mtrazzi           #+#    #+#             */
-/*   Updated: 2017/06/04 14:41:52 by mtrazzi          ###   ########.fr       */
+/*   Updated: 2017/06/04 16:02:32 by mtrazzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,15 @@ int		is_intput_well_formated(char *str)
 
 	i = 0;
 	nb = (ft_strlen(str) + 1) / 21;
+	printf("nb vaut : %lu\n", nb);
 	if (nb * 21 - 1 != ft_strlen(str))
 		return (0);
+	printf("checkpoint 0\n");
 	while (i < nb - 1)
 	{
-		if (!is_str_square(str + 21 * i) || str[20 * (i + 1)] != '\n')
+		if (!is_str_square(str + 21 * i) || str[20 + 21 * i] != '\n')
 			return (0);
+		printf("checkpoint %lu\n", i + 1);
 		i++;
 	}
 	if (!is_str_square(str + 21 * i))
@@ -55,10 +58,24 @@ int		is_intput_well_formated(char *str)
 	return (1);
 }
 
-int main(int ac, char **av)
+int		is_tetri(char *str)
 {
-	if (ac != 2)
-		return (0);
-	printf("%d", is_intput_well_formated(ft_ret_tetris_fr_file(av[1])));
+	int i;
+	char *tet_lst;
+
+	i = 0;
+	tet_lst = ft_ret_tetris_fr_file("all_tetriminos");
+	while (i < 15)
+	{
+		if (diff_tetri(str, tet_lst + 5 * i, 4, '#'))
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+int		main()
+{
+	printf("%d", is_tetri("#...\n#...\n#...\n#...\n"));
 	return (0);
 }
