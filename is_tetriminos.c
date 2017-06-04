@@ -48,22 +48,46 @@ int		is_intput_well_formated(char *str)
 
 int		is_tetri(char *str)
 {
-	int i;
-	char *tet_lst;
+	int		i;
+	char	*tet_lst;
+	char	*code;
 
 	i = 0;
-	tet_lst = ft_ret_tetris_fr_file("all_tetriminos");
+	tet_lst = ft_read("all_tetriminos");
+	code = tetris_type(str, '#');
+	code[0] = '0';
+	printf("code : %s\n", code);
 	while (i < 15)
 	{
-		if (diff_tetri(str, tet_lst + 5 * i, 4, '#'))
+		write(1, tet_lst + 5 * i + 1, 3);
+		printf("\n");
+		if (!ft_strncmp(tet_lst + 5 * i, code, 4))
 			return (1);
 		i++;
 	}
 	return (0);
 }
 
-int		main()
+int		ft_corr_input(char *input)
 {
-	printf("%d", is_tetri("#...\n#...\n#...\n#...\n"));
+	size_t	i;
+
+	i = 0;
+	if (!is_intput_well_formated(input))
+		return (0);
+	while (i < (ft_strlen(input) + 1) / 21)
+	{
+		if (!is_tetri(input + 21 * i))
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+int		main(int ac, char **av)
+{
+	if (ac != 2)
+		return (0);
+	printf("%d", ft_corr_input(ft_read(av[1])));
 	return (0);
 }

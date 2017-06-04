@@ -17,20 +17,12 @@ char	*tetris_type(char *pointer, char c)
 	{
 		if (c == pointer[i])
 		{
-			str[j] = '0' + i - p;	
+			printf("in code : i = %d and p = %d\n", i, p);
+			str[j] = '0' + i - p;
 			p = i;
 			j++;
 		}
 		i++;
 	}
 	return (str);
-}
-
-int	main(void)
-{
-	char	*test;
-
-	test = "...#\n...#\n..#.\n..#.";
-	printf("%s\n", tetris_type(test, '#'));
-	return (0);
 }
