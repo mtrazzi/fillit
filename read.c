@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   read.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtrazzi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/03 17:28:40 by mtrazzi           #+#    #+#             */
-/*   Updated: 2017/06/04 14:35:13 by mtrazzi          ###   ########.fr       */
+/*   Created: 2017/06/04 14:30:21 by mtrazzi           #+#    #+#             */
+/*   Updated: 2017/06/04 14:35:19 by mtrazzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-#include <stdio.h>
 
-int		main(int ac, char **av)
+char    *ft_ret_tetris_fr_file(char *av1)
 {
-	char	*buff;
-	if (ac != 2)
-		ft_putendl_fd("error", 2);
-	buff = ft_ret_tetris_fr_file(av[1]);
-	printf("%s\n", buff);
-	ft_putendl(buff);
-	return (0);
+	int     fd;
+	int     ret;
+	int     len;
+	char    *buff;
+
+	len = 0;
+	fd = open(av1, O_RDONLY);
+	buff = ft_strnew(20);
+	while ((ret = read(fd, buff, 20)) > 0)
+		len += ret;
+	close (fd);
+	buff = ft_strnew(len);
+	fd = open(av1, O_RDONLY);
+	ret = read(fd, buff, len);
+	return (buff);
 }

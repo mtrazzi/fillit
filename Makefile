@@ -9,10 +9,9 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 all:
-	(test -f libft/libft.a) || (cd libft && $(MAKE))
+	(test -f libft/libft.a) || (cd libft && $(MAKE) && ranlib libft.a)
 	$(CC) $(CFLAGS) -c $(SRC_NAME)
 	$(CC) $(CFLAGS) -Llibft -lft $(OBJ_NAME) -o $(NAME)	
-
 clean_lib:
 	(test -f libft/libft.a) && /bin/rm libft/libft.a
 	
