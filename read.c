@@ -6,13 +6,13 @@
 /*   By: mtrazzi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/04 14:30:21 by mtrazzi           #+#    #+#             */
-/*   Updated: 2017/06/04 14:35:19 by mtrazzi          ###   ########.fr       */
+/*   Updated: 2017/06/04 15:18:12 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-char    *ft_ret_tetris_fr_file(char *av1)
+char    *ft_read(char *av1)
 {
 	int     fd;
 	int     ret;

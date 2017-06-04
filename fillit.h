@@ -6,7 +6,7 @@
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/03 15:28:20 by pringsta          #+#    #+#             */
-/*   Updated: 2017/06/04 14:05:59 by mtrazzi          ###   ########.fr       */
+/*   Updated: 2017/06/04 15:17:48 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 int		diff_tetri(char *s, char *t, size_t n, char c);
 int		is_str_square(char *str);
 int		is_input_well_formated(char *str);
-char	*ft_ret_tetris_fr_file(char *av1);
+char	*read(char *av1);
 
 #define FILLIT_H
 
