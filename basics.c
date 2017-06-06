@@ -28,19 +28,21 @@ char	*ft_empty_grid(size_t size)
 
 char	*convert_size(char *tetri, int size)
 {
-	int i;
-	int pos;
-	int x;
+	int		i;
+	int		pos;
+	int		x;
+	char	*ans;
 
 	i = 1;
+	ans = ft_strdup(tetri);
 	pos = tetri[0] - '0';
 	while (i < 4)
 	{
 		x = tetri[i] - '0';
-		if (((pos + x) % (size + 1)) <= (pos % (size + 1)))
-			tetri[i] += 1;
+		if (((pos + x) % 5) <= (pos % 5))
+			ans[i] = tetri[i] + size - 4;
 		pos += x;
 		i++;
 	}
-	return (tetri);
+	return (ans);
 }
