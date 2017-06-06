@@ -1,5 +1,4 @@
 #include "fillit.h"
-#include <stdio.h>
 
 int		is_str_square(char *str) //test si la string est de la forme ****\n****\n****\n****\n
 {
@@ -53,13 +52,9 @@ int		is_tetri(char *str)
 	i = 0;
 	tet_lst = ft_read("all_tet");
 	code = tetris_type(str);
-	printf("code : %s\n", code);
 	while (i < (ft_strlen(tet_lst) + 1) / 21)
 	{
 		test = tetris_type(tet_lst + 21 * i);
-		write(1, "test is : ", 10);
-		write(1, test + 1, 3);
-		write(1, "\n", 1);
 		if (!ft_strncmp(test + 1, code + 1, 3))
 			return (1);
 		i++;
@@ -72,7 +67,7 @@ int		ft_corr_input(char *input)
 	size_t	i;
 
 	i = 0;
-	if (!is_intput_well_formated(input))
+	if (is_intput_well_formated(input) == 0)
 		return (0);
 	while (i < (ft_strlen(input) + 1) / 21)
 	{

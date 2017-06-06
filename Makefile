@@ -8,28 +8,26 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-all:
+all: $(NAME)
+
+$(NAME):
 	(test -f libft/libft.a) || (cd libft && $(MAKE) && ranlib libft.a)
 	$(CC) $(CFLAGS) -c $(SRC_NAME)
 	$(CC) $(CFLAGS) -Llibft -lft $(OBJ_NAME) -o $(NAME)	
-clean_lib:
-	(test -f libft/libft.a) && /bin/rm libft/libft.a
-	
-clean:
+
+xclean:
 	/bin/rm -f $(OBJ_NAME)
 	/bin/rm -f ./a.out
 
-fclean: clean
+xfclean: xclean
 	/bin/rm -f $(NAME)
 
-re: fclean all
+xre: xfclean all
 
-lclean: clean
+clean: xclean
 	cd libft && ($(MAKE) clean)
 
-lfclean: fclean
+fclean: xfclean
 	cd libft && ($(MAKE) fclean)
 
-lre:
-	cd libft && ($(MAKE) fclean)
-	$(MAKE) re
+re: xre
