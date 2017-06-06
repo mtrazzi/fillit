@@ -1,9 +1,9 @@
 #include "fillit.h"
 
-int		is_str_square(char *str) //test si la string est de la forme ****\n****\n****\n****\n
+int	is_str_square(char *str)
 {
-	int i;
-	int j;
+	int		i;
+	int		j;
 
 	i = 0;
 	while (i < 4)

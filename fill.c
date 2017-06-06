@@ -1,12 +1,12 @@
 #include "fillit.h"
 #include <stdio.h>
 
-int		ft_count(char *inp, char *grid, int count, int step)
+int	ft_count(char *inp, char *grid, int count, int step)
 {
-	int size;
-	char *tet;
-	int	pos;
-	int tmp;
+	int		size;
+	char	*tet;
+	int		pos;
+	int		tmp;
 
 	if (*inp == '\0')
 		return (count + 1);
@@ -32,10 +32,10 @@ int		ft_count(char *inp, char *grid, int count, int step)
 
 void	ft_print(char *inp, char *grid, int count, int step, int *found)
 {
-	int size;
-	char *tet;
-	int	pos;
-	int tmp;
+	int		size;
+	char	*tet;
+	int		pos;
+	int		tmp;
 
 	if (*found)
 		return ;

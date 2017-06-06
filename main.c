@@ -1,11 +1,11 @@
 #include "fillit.h"
 #include <stdio.h>
 
-int		main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	char	*buff;
-	int x;
-	int n;
+	int		x;
+	int		n;
 
 	x = 0;
 	if (ac != 2)
