@@ -6,7 +6,7 @@
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/05 10:42:47 by pringsta          #+#    #+#             */
-/*   Updated: 2017/05/05 10:54:32 by pringsta         ###   ########.fr       */
+/*   Updated: 2017/06/06 18:33:31 by mtrazzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,7 @@ int		ft_sqrt(int nb)
 		i++;
 		nb1 = i * i;
 	}
-	return (nb1 == nb) ? (i) : (0);
+	if (nb1 == nb)
+		return (i);
+	return (ft_sqrt(nb1));
 }
