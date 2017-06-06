@@ -30,7 +30,7 @@ int		is_intput_well_formated(char *str)
 
 	i = 0;
 	nb = (ft_strlen(str) + 1) / 21;
-	printf("nb vaut : %lu\n", nb);
+	//printf("nb vaut : %lu\n", nb);
 	if (nb * 21 - 1 != ft_strlen(str))
 		return (0);
 	printf("checkpoint 0\n");
@@ -84,12 +84,4 @@ int		ft_corr_input(char *input)
 		i++;
 	}
 	return (1);
-}
-
-int		main(int ac, char **av)
-{
-	if (ac != 2)
-		return (0);
-	printf("%d", ft_corr_input(ft_read(av[1])));
-	return (0);
 }
