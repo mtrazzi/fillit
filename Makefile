@@ -1,6 +1,6 @@
 NAME = fillit
 
-SRC_NAME = main.c read.c tetris_type.c is_tetriminos.c insert.c basics.c fill.c
+SRC_NAME = main.c ft_read.c tetris_type.c is_tetriminos.c insert.c basics.c fill.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
