@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   is_tetriminos.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mtrazzi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/06/06 21:19:58 by mtrazzi           #+#    #+#             */
+/*   Updated: 2017/06/06 21:52:34 by mtrazzi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fillit.h"
 
-int	is_str_square(char *str)
+int		is_str_square(char *str)
 {
-	int		i;
-	int		j;
+	int i;
+	int j;
 
 	i = 0;
 	while (i < 4)
@@ -67,7 +79,7 @@ int		ft_corr_input(char *input)
 	size_t	i;
 
 	i = 0;
-	if (is_intput_well_formated(input) == 0)
+	if (!is_intput_well_formated(input))
 		return (0);
 	while (i < (ft_strlen(input) + 1) / 21)
 	{
