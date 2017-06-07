@@ -6,14 +6,13 @@
 /*   By: mtrazzi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/06 21:45:59 by mtrazzi           #+#    #+#             */
-/*   Updated: 2017/06/06 21:50:58 by mtrazzi          ###   ########.fr       */
+/*   Updated: 2017/06/07 10:55:08 by mtrazzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FILLIT_H
 
 # define FILLIT_H
-# include <stdio.h>
 # include <unistd.h>
 # include <fcntl.h>
 # include "libft/libft.h"

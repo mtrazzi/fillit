@@ -6,12 +6,11 @@
 /*   By: mtrazzi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/06 20:51:33 by mtrazzi           #+#    #+#             */
-/*   Updated: 2017/06/06 22:13:46 by mtrazzi          ###   ########.fr       */
+/*   Updated: 2017/06/07 10:27:24 by mtrazzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-#include <stdio.h>
 
 char	*ft_read(char *av1)
 {
