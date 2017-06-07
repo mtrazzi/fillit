@@ -6,7 +6,7 @@
 /*   By: mtrazzi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/06 20:51:21 by mtrazzi           #+#    #+#             */
-/*   Updated: 2017/06/07 10:22:32 by mtrazzi          ###   ########.fr       */
+/*   Updated: 2017/06/07 11:32:18 by mtrazzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,22 @@ int		ft_count(char *inp, char *grid, int count, int step)
 	if (*inp == '\0')
 		return (count + 1);
 	size = ft_line_len(grid);
-	tet = convert_size(tetris_type(inp), size);
-	pos = 0;
-	while (grid[pos] != '\0')
+	if (!(tet = convert_size(tetris_type(inp), size)))
+		return (0);
+	pos = -1;
+	while (grid[++pos] != '\0')
 	{
 		if (ft_isroom(grid, tet, pos))
 		{
 			grid = ft_insert(grid, tet, pos, 'A' + step);
 			tmp = step;
-			count = ft_count(inp + 21, grid, count, step + 1);
-			if (count > 0)
+			if ((count = ft_count(inp + 21, grid, count, step + 1)) > 0)
 				return (1);
 			step = tmp;
 			ft_insert(grid, tet, pos, '.');
 		}
-		pos++;
 	}
+	free(tet);
 	return (count);
 }
 
@@ -62,7 +62,8 @@ void	ft_print(char *inp, char *grid, int step, int *found)
 
 	ft_print_aux(inp, grid, found);
 	size = ft_line_len(grid);
-	tet = convert_size(tetris_type(inp), size);
+	if (!(tet = convert_size(tetris_type(inp), size)))
+		return ;
 	pos = -1;
 	while (grid[++pos] != '\0')
 	{
@@ -77,4 +78,5 @@ void	ft_print(char *inp, char *grid, int step, int *found)
 			ft_insert(grid, tet, pos, '.');
 		}
 	}
+	free(tet);
 }

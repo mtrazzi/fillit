@@ -6,7 +6,7 @@
 /*   By: mtrazzi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/06 20:50:59 by mtrazzi           #+#    #+#             */
-/*   Updated: 2017/06/06 20:51:11 by mtrazzi          ###   ########.fr       */
+/*   Updated: 2017/06/07 11:20:01 by mtrazzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ char	*ft_empty_grid(size_t size)
 	size_t	i;
 
 	i = 0;
-	str = ft_strnew(size * (size + 1));
+	if (!(str = ft_strnew(size * (size + 1))))
+		return (NULL);
 	str = ft_memset(str, '.', size * (size + 1));
 	while (i < size)
 	{
@@ -46,7 +47,8 @@ char	*convert_size(char *tetri, int size)
 	char	*ans;
 
 	i = 1;
-	ans = ft_strdup(tetri);
+	if (!(ans = ft_strdup(tetri)))
+		return (NULL);
 	pos = tetri[0] - '0';
 	while (i < 4)
 	{
