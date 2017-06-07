@@ -1,9 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fillit.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mtrazzi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/06/06 21:45:59 by mtrazzi           #+#    #+#             */
+/*   Updated: 2017/06/06 21:50:58 by mtrazzi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FILLIT_H
 
-#include <stdio.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include "libft/libft.h"
+# define FILLIT_H
+# include <stdio.h>
+# include <unistd.h>
+# include <fcntl.h>
+# include "libft/libft.h"
 
 int		diff_tetri(char *s, char *t, size_t n, char c);
 int		is_str_square(char *str);
@@ -19,8 +32,6 @@ int		ft_isroom(char *grid, char *tetri, int position);
 char	*ft_empty_grid(size_t size);
 char	*convert_size(char *tetri, int size);
 int		ft_count(char *inp, char *grid, int count, int step);
-void	ft_print(char *inp, char *grid, int count, int step, int *found);
-
-#define FILLIT_H
+void	ft_print(char *inp, char *grid, int step, int *found);
 
 #endif

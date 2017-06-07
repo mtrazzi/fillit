@@ -1,7 +1,18 @@
-#include "fillit.h"
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fill.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mtrazzi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/06/06 20:51:21 by mtrazzi           #+#    #+#             */
+/*   Updated: 2017/06/06 21:56:06 by mtrazzi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int	ft_count(char *inp, char *grid, int count, int step)
+#include "fillit.h"
+
+int		ft_count(char *inp, char *grid, int count, int step)
 {
 	int		size;
 	char	*tet;
@@ -30,13 +41,8 @@ int	ft_count(char *inp, char *grid, int count, int step)
 	return (count);
 }
 
-void	ft_print(char *inp, char *grid, int count, int step, int *found)
+void	ft_print_aux(char *inp, char *grid, int *found)
 {
-	int		size;
-	char	*tet;
-	int		pos;
-	int		tmp;
-
 	if (*found)
 		return ;
 	if (*inp == '\0')
@@ -45,21 +51,30 @@ void	ft_print(char *inp, char *grid, int count, int step, int *found)
 		ft_putstr(grid);
 		return ;
 	}
+}
+
+void	ft_print(char *inp, char *grid, int step, int *found)
+{
+	int		size;
+	char	*tet;
+	int		pos;
+	int		tmp;
+
+	ft_print_aux(inp, grid, found);
 	size = ft_line_len(grid);
 	tet = convert_size(tetris_type(inp), size);
-	pos = 0;
-	while (grid[pos] != '\0')
+	pos = -1;
+	while (grid[++pos] != '\0')
 	{
 		if (ft_isroom(grid, tet, pos))
 		{
 			grid = ft_insert(grid, tet, pos, 'A' + step);
 			tmp = step;
-			ft_print(inp + 21, grid, count, step + 1, found);
+			ft_print(inp + 21, grid, step + 1, found);
 			if (*found)
 				return ;
 			step = tmp;
 			ft_insert(grid, tet, pos, '.');
 		}
-		pos++;
 	}
 }

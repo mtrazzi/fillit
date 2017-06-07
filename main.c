@@ -1,5 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mtrazzi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/06/06 20:51:41 by mtrazzi           #+#    #+#             */
+/*   Updated: 2017/06/06 22:13:21 by mtrazzi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fillit.h"
-#include <stdio.h>
 
 int	main(int ac, char **av)
 {
@@ -19,9 +30,9 @@ int	main(int ac, char **av)
 		ft_putendl_fd("error", 1);
 		return (0);
 	}
-	n = ft_sqrt(6 * ((ft_strlen(buff) + 1) / 21));
+	n = 2;
 	while (!ft_count(buff, ft_empty_grid(n), 0, 'A'))
 		n++;
-	ft_print(buff, ft_empty_grid(n), 0, 0, &x);
+	ft_print(buff, ft_empty_grid(n), 0, &x);
 	return (0);
 }

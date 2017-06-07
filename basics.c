@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   basics.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mtrazzi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/06/06 20:50:59 by mtrazzi           #+#    #+#             */
+/*   Updated: 2017/06/06 20:51:11 by mtrazzi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fillit.h"
 
 int		ft_line_len(char *grid)
@@ -17,7 +29,7 @@ char	*ft_empty_grid(size_t size)
 
 	i = 0;
 	str = ft_strnew(size * (size + 1));
-	str = memset(str, '.', size * (size + 1));
+	str = ft_memset(str, '.', size * (size + 1));
 	while (i < size)
 	{
 		str[size + (size + 1) * i] = '\n';
