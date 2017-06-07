@@ -6,7 +6,7 @@
 /*   By: mtrazzi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/06 20:51:33 by mtrazzi           #+#    #+#             */
-/*   Updated: 2017/06/07 12:11:42 by pringsta         ###   ########.fr       */
+/*   Updated: 2017/06/07 12:17:47 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ char	*ft_read(char *av1)
 		return (NULL);
 	if ((read(fd, buff, 550)) == -1)
 		return (NULL);
-	close(fd);
+	if (close(fd) == -1)
+		return (NULL);
 	return (buff);
 }
