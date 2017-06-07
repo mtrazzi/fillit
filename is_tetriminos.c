@@ -6,7 +6,7 @@
 /*   By: mtrazzi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/06 21:19:58 by mtrazzi           #+#    #+#             */
-/*   Updated: 2017/06/07 11:04:36 by mtrazzi          ###   ########.fr       */
+/*   Updated: 2017/06/07 12:36:46 by mtrazzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,8 @@ int		ft_corr_input(char *input)
 	size_t	i;
 
 	i = 0;
+	if (input == NULL)
+		return (0);
 	if (!is_intput_well_formated(input))
 		return (0);
 	while (i < (ft_strlen(input) + 1) / 21)

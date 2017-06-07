@@ -6,7 +6,7 @@
 /*   By: mtrazzi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/06 21:45:59 by mtrazzi           #+#    #+#             */
-/*   Updated: 2017/06/07 10:55:08 by mtrazzi          ###   ########.fr       */
+/*   Updated: 2017/06/07 12:36:29 by mtrazzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 int		diff_tetri(char *s, char *t, size_t n, char c);
 int		is_str_square(char *str);
-int		is_input_well_formated(char *str);
+int		is_intput_well_formated(char *str);
 int		ft_corr_input(char *input);
 char	*tetris_type(char *pointer);
 char	*ft_read(char *av1);
